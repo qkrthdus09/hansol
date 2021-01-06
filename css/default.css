@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+body,h1,h2,h3,h4,h5,h6,p,dl,dd{margin: 0;}
+body{
+    min-width:1200px;
+    color: #333; /*전체컬러*/
+    /*font-family: 'Noto Sans KR', sans-serif; */ /*1.구글폰트 사이트 다운 링크에서 css부분 가져온거*/
+    font-family: 'NotoSans', sans-serif;  /*2.이건다운받아서 폴더넣은거*/
+    letter-spacing: -1px; /*자간작게*/
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'NanumMyeongjo',serif; /*2.두개연결하기 밑에있는거부터 먹음*/
+    font-weight: 900;
+}
+
+
+ul{
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+.inner{
+    width: 1200px;
+    margin: 0 auto;
+}
+.cf::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.mr0{margin-right: 0 !important;}

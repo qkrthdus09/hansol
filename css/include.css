@@ -1,0 +1,232 @@
+@charset "utf-8";
+
+/*헤더*/
+#header{
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    margin: 30px 50px;
+    position: relative;
+}
+
+#header h1{
+    width: 110px;
+    height: 45px;
+    background:url(../images/sp_com.png) no-repeat
+        -300px -5px;
+    text-indent: -9999px;
+    position: absolute; /*얘도 줘야함 그래야 한줄처리가됨*/
+}
+#header h1 a{
+    display: block; /*링크가 글씨 빠지면서 같이빠져서 해줘야하는것*/
+}
+
+.gnb{
+    display: inline-block; /*움직일 수 있게 하기위해 인라인블락으로 해야 딱 자기값만 가질 수있다.자기영역만 잡히게 헤더에 택스트얼라인센터하면 먹힘*/
+}
+.gnb>li{
+    float: left;
+    padding: 0 30px; /*인라인이기떄문에 양옆으로 할수 있음*/ /*패딩을 마진으로 바꿔줘야 스케일 앱솔루트가 먹음*/
+    position: relative;
+}
+/*.gnb li::after{   글바로 밑에 가로로 왼쪽에서 오른쪽 선긋기
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0%;
+    background: #2d5b79;
+    transition: width 1s;
+    margin: 0 auto;
+    
+}
+.gnb li:hover::after{
+    width: 100%;
+}*/
+
+.gnb>li::after{    /*한참밑에 중앙에서 선생기게하기*/ /*>안하면 플로트레프트가 먹혀서그냥 자식요소를 >꺾쇠써서 간편하게하기*/
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #2d5b79;
+    position: absolute;
+    left: 0;
+    bottom: -31px;
+    transform: scale(0,1);
+    transition: transform 1s;
+
+    
+        
+}
+.gnb>li:hover::after{
+    transform: scale(1);
+}
+
+
+.gnb li a{}
+
+
+/*lnb*/
+.lnb{
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    top: 75px;
+    background:#fff;
+    z-index: 1;
+    transition:  max-height 0.3s;
+}
+.gnb li:hover .lnb{
+    max-height: 250px;
+}
+
+.lnb li{
+    width: 100%;
+    padding: 1px;
+        
+}
+.lnb li:hover{
+    background: #2d5b79;
+}
+
+.lnb li a:hover{
+    color: #fff;
+    font-weight: 400;
+}
+
+
+.util{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 13px;
+}
+.util li{
+    float: left;
+}
+.util li::after{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 8px;
+    background: #333;
+    margin: 0 5px;
+}
+.util li:last-child::after{
+    display: none;
+}
+
+
+
+.util li a{}
+
+
+/*푸터*/
+#footer{
+    color: #fff;
+}
+
+.fTop{
+    background: #383F43;
+    padding: 10px 0;
+}
+
+.fMenu{
+    float: left;
+}
+.fMenu li{
+    float: left;
+    line-height: 40px;
+    
+}
+.fMenu li::after{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 8px;
+    background: #fff;
+    margin: 0 5px;
+    
+}
+/*.fMenu li:last-child::after{display: none;} 이건원래 모바일전에 있었던거*/
+.webFMenu li:last-child::after{display: none;} /*모바일하면서 클래스 따로줘서 이렇게 함*/
+
+.fMenu li a{
+    color: #fff; /*a태그는 직접바꿔줘야한다 디폴트css에서 a에 333있어서 (요소검사해봐)*/
+    font-size: 13px;
+}
+
+.csFamily{
+    float: right;
+}
+/*   .csFmaily>div{}  아래 각각잡은거랑 똑같은 뜻  */
+.csBox,.familyBox{
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    
+}
+
+.csFamily{}
+.csBox{
+    background: #2A3033;
+}
+.csBox span{
+    font-weight: bold;
+    vertical-align: text-bottom;
+}
+.csBox .num{
+    font-size: 22px;
+    font-weight: normal; /*두개다진하게하고 다시 뺴기*/
+    padding-left: 10px;
+}
+
+.familyBox{
+    background: #fff url(../images/arrow.png) no-repeat 95% center;
+    color: #333;
+    width: 150px;
+    margin-left: 10px;
+}
+
+
+.fBottom{
+    background: #4C5459;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.fLogo{
+    width: 130px;
+    height: 50px;
+    background: url(../images/sp_com.png) no-repeat -150px 0;
+    text-indent: -9999px;
+    margin: 0 auto; /*!!!*/
+    
+}
+
+.fBottom p{
+    margin-top: 20px;
+    font-size: 11px;
+    
+}
+.fBottom p span{
+    font-size: 13px;
+}
+
+.fBottom p span::after{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 8px;
+    background: #fff;
+    margin:0 5px;
+}
+.fBottom p span:last-child::after{display: none;}
+
+
+
+

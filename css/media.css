@@ -1,0 +1,299 @@
+@charset "utf-8";
+
+/*웹뷰(웹에서만 적용됨)*/
+.panel,.mMainCon04{display: none;}
+
+
+
+
+
+
+
+/*@media screen and (max-width:1024px){ /*노트북기준
+@media screen and (max-width:320px){ /*가장작은화면 기준*/
+    
+
+@media screen and (max-width:768px){ /*768px까지만 먹는다는 명령어*/
+    /*body{display: none;  요걸로 잘먹고있는지 화면줄여보면서 확인하기 줄였을때 빈화면 모바일도 빈화면*/
+    
+    /*웹공통*/
+    body{min-width: auto; /*기본적으로 자기값만큼만 하게끔함*/}
+    .inner{width: auto;   /*이너값도 원래 1200인데 안되니까 오토로 함*/}
+    
+    /*모바일에서 보임*/
+    .panel,.mMainCon04{display: block;}
+    
+    /*모바일에서 안보임*/
+    .gnb,.util,.mainCon02,.mainCon03>div p,.con03Search form,.mainCon04,.con05List li p,.fInfo,.fLogo{display: none;}  /*모바일에서 보이게하게끔하는것 웹이서는위에 안보이게 해놨으니까*/
+    /*mainCon02없애서 필요없따아
+    필요없는거 하나씩 적기*/
+
+    /*헤더*/ 
+    #header{
+        height: auto;
+        margin:10px 20px;
+    }
+    #header h1{  /*기존꺼 요소검사해서 그대로 복사해서 가져와*/ 
+        background-size: 400px;  /*포토샵들어가서 전체수치 바꾸고 거기서 치수확인해서 밑에적기*/
+        width: 70px;
+        height: 28px;
+        background-position: 0 0;
+        position: static; /*기본값 명령임 우리 앱솔루트할때 했음 기본값*/
+    }
+    
+    .panel{
+        width: 16px;
+        height: 16px;
+        background:url(../images/sp_com.png) no-repeat -227px -98px;
+        background-size: 400px; /*400으로 하는 이유는 기존에 웹 백그라운드의 반값만 주면된다 */
+        text-indent: -9999px;
+        position: absolute;  /*포지션 릴리티브는 웹에서 먹고있어서 굳이안해도된다*/
+        top: 50%;
+        right: 0;
+        margin-top: -8px;
+            
+    }
+    .panel a{
+        display: block; /*텍스트인덴트하면 무조건해줘야함*/
+        height: 100%; /*부모영역 딱맞게만들어줘야함*/
+    }
+    
+    /*메인슬라이더*/
+    .mainSlider{
+        margin: 0; /*마진없애야 꽉참*/
+        height: auto;
+    }
+    .mainTxt{
+        padding: 45% 0;  /*반기분으로 적당하가생각하니까 30퍼줘도 됨*/
+    }
+    .mainTxt h2{
+        font-size: 14px;
+    }
+    .mainTxt p{
+        font-size: 11px;
+    }
+    .sliderBtn{
+        width: 13px;
+        height: 23px;
+        background-size:400px;
+        background-position:-64px -30px; 
+        margin-top: -11px;
+    }
+    .leftBtn{left: 10px;}
+    .rightBtn{
+        background-position:-79px -30px;
+        right: 10px;
+    }
+
+
+
+/*mainCon01*/
+.mainCon01{padding: 20px 0;}
+.mainCon01 ul{
+    display: block; /*전체영역잡아서 넓히기*/
+    overflow: hidden; /*float:left 해제하기위해서 씀 요소검사해보면 이거 없으면 ul이 안잡힘
+    이게 있어야 잡힘 그렇다고 cf를 주면 웹이랑 같이 먹혀서 안되니까 방법이 여러가지인데 
+    그중 또 한가지 방법이 이거임.*/
+}
+.mainCon01 li{
+    font-size: 14px;
+    margin: 0; /*마진값없앤댜 인라인 마진 30퍼준다*/
+    width: 33.33%;/*전체영역잡아서 넓히기*/
+    padding: 10px 0; /*사이사이 넓어지게 위아래*/
+}
+.mainCon01 li span{
+    background-size:400px; /*위치가 다바껴있지만 바꿔야한다*/
+    width: 33px; /*네모사이즈를 넉넉하게 잡아놈*/
+    height: 33px;
+    margin: 0 auto; /*중앙정렬*/
+}
+
+.con01Icon01{background-position: -1px -57px;}
+.con01Icon02{background-position: -37px -57px;}
+.con01Icon03{background-position: -74px -55px;}
+.con01Icon04{background-position: -109px -57px;}
+.con01Icon05{background-position: -145px -57px;}
+.con01Icon06{background-position: -181px -57px;}
+
+.mainCon01 li:hover span{background-position-y:-92px;} /*웹요소검사한거 명령 호버 그대로들고와야한다*/
+
+    
+    /*mainCon03*/
+    .mainCon03,.mainCon03 .con03Search h3{ /*제품찾기 요소검사해서 그대로 불러와서 넣아야먹음*/
+        /*padding-top: 0; 생력가능 밑에있으니까*/
+        padding: 0 10px;
+        
+    }
+    .mainCon03>div{
+        /*width: 50%;*/
+        width: calc(50% - 5px); /*각각 50에서 5픽셀뺀상태 10더 오른쪽에남아있을꺼야*/
+        height: auto;
+        /*margin-right: 0; 이거바꿈*/
+        margin-right: 10px;
+        margin-bottom: 10px;
+        background-size: cover; /*비율이정확히 화면서 커져도 빈공간이 안생기게 커버하자
+        티는안나지만 위아래 밑에꺼 패딩 50퍼로 줘도 상관없음*/
+    }
+    .mainCon03>div:nth-child(2n){margin-right:0;}
+    
+    .mainCon03>div h3{
+        padding: 45% 0;
+        font-size: 15px;
+    }
+    
+    .mainCon03 .con03Search h3{padding: 45% 0;}
+    
+    
+    
+    /*mainCon04*/
+    .mMainCon04{
+        
+    }
+    .mMainCon04 dl{
+        background: #f2f0ed;
+        overflow: hidden;/*플루트레프트밑에 이거 속성해제*/
+        margin: 0 10px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 13px;
+        margin-bottom: 10px; /*위치밑에있어야먹는다*/
+    }
+    .mMainCon04 dt{
+        float: left;
+        width: 20%; /*딱맞게 밑에꺼랑 100퍼맞게해줘야함 그리고 글자가 길기때문에 위드 퍼센트로 해야함*/
+        text-align: center;
+        color: #2d5b79;
+        font-weight: bold;
+    }
+    .mMainCon04 dd{
+        float: left;
+        width: 75%; /*원래는 80퍼인데 오른쪽에 여백남기기위해서 75로 바꿈*/
+    }
+    .mMainCon04 dd a{
+        display: block;
+        width: 100%; /*영역 딱맞게해주기 ,디스플레이 블락이 있으면 굳이 100안해줘도 되긴함
+        만약 글자 영역을 줄이고 싶다면 위에 dd부모영역 퍼센트를 줄여서 해도 어차피 명령먹을꺼니까
+        그렇게 해도됨*/
+        white-space: nowrap; /*한줄로 만들어주기*/
+        overflow: hidden; /*글자티어나오는거*/
+        text-overflow: ellipsis;  /*...처리*/
+    }
+    
+    
+    /*mainCon05*/
+    /*v패딩만가능 배경잇으니까*/
+    .mainCon05{
+        padding: 20px 10px; 
+        padding-bottom: 10px;/*숫자놀이*/
+    }
+    .con05List li{
+        /*width: 50%;*/
+        width:calc(50% - 5px); /*사이10px이니까 각각 오씩 빼야 5와5를 뺀거,한개라면 10px이지당근*/
+        height: auto;
+        margin-right: 10px;
+        margin-bottom: 10px; /*숫자놀이*/
+        background-size: 100% 100% /*모바일사이즈하나 만들어야하는데 이렇게 하면 찌그러지지만 선은 다보인다*/ 
+    }    
+    .con05List li:nth-child(2n){margin-right:0;}
+    
+    .con05List li h3{
+        padding: 70% 0 20% 0;  /*원래는 padding-top: 0;이었는데 바꼈음*/
+        font-size: 15px;
+        
+    }
+    
+    /*footer*/
+    .fMenu{
+        width: 100%; /*가로값100퍼센트하는이유->플루트레프트 각자갖고있는거 그대로 ul해논거 자기영역만큼 할라고 100퍼한것   */
+        text-align: center;
+        margin: 5px 0;
+    }
+    .fMenu li{
+        display: inline-block; 
+        float: none; /*인라인블락보다 플루트가더 쎈속성이라서 이거 안주면 안먹을꺼다 플루트 논 해줘야먹는다*/
+        line-height: normal; /*요소검사에서 웹뷰에 있는거 라인헤이트없에는거*/
+    }
+    
+    .fMenu li:last-child::after{display: none;} /*마지막꺼 선 빼는거*/
+    
+    
+    .csFamily{
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        
+    }
+    .csBox, .familyBox{
+        float: none;  /*인라인블락먹을라면 플루트 논을 해야함*/
+        display: inline-block;
+        vertical-align: top;
+        font-size: 13px;
+    }
+    .csBox .num{
+        font-size: 13px;
+    }
+    .csBox{
+        width: 50%;
+        box-sizing: border-box;
+    }
+    
+    .familyBox{
+        width: 30%;
+        margin-left: 5px;
+        text-align: left;
+    }
+    
+    .fBottom{
+        padding: 30px 0;
+    }
+    .fBottom p{
+        margin: 0;
+    }
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
